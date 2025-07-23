@@ -1,0 +1,51 @@
+﻿<Window x:Class="PresentationWPF.Admin.Product.ProductDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Thông tin sản phẩm" Height="721" Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#F8F9FA">
+    <Border Background="White" Padding="20" CornerRadius="10" Margin="20" BorderBrush="#dee2e6" BorderThickness="1">
+        <StackPanel>
+
+            <TextBlock Text="📝 Thông tin sản phẩm" FontSize="22" FontWeight="Bold" Foreground="#343a40" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+            <!-- Tên sản phẩm -->
+            <TextBlock Text="Tên sản phẩm:" FontWeight="Bold" Foreground="#495057"/>
+            <TextBox x:Name="txtName" Height="30" Margin="0,0,0,10"/>
+
+            <!-- Mô tả -->
+            <TextBlock Text="Mô tả:" FontWeight="Bold" Foreground="#495057"/>
+            <TextBox x:Name="txtDescription" Height="60" Margin="0,0,0,10" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+            <!-- Giá -->
+            <TextBlock Text="Giá:" FontWeight="Bold" Foreground="#495057"/>
+            <TextBox x:Name="txtPrice" Height="30" Margin="0,0,0,10"/>
+
+            <!-- Tồn kho -->
+            <TextBlock Text="Số lượng tồn kho:" FontWeight="Bold" Foreground="#495057"/>
+            <TextBox x:Name="txtQuantity" Height="30" Margin="0,0,0,10"/>
+
+            <!-- Danh mục -->
+            <TextBlock Text="Danh mục:" FontWeight="Bold" Foreground="#495057"/>
+            <ComboBox x:Name="cbCategory" Height="30" Margin="0,0,0,10"
+                      DisplayMemberPath="CategoryName" SelectedValuePath="CategoryId"/>
+
+            <!-- Ảnh sản phẩm -->
+            <TextBlock Text="Ảnh sản phẩm:" FontWeight="Bold" Foreground="#495057" Margin="0,10,0,5"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,10">
+                <Image x:Name="imgPreview" Width="100" Height="100" Stretch="Uniform" Margin="0,0,10,0" />
+                <Button Content="📁 Chọn ảnh..." Background="Aqua" Width="100" Height="30" Click="BtnChooseImage_Click"/>
+            </StackPanel>
+
+            <!-- Nút thao tác -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                <Button Content="Hủy" Width="80" Margin="0,0,10,0" Click="BtnCancel_Click"
+                        Background="#6c757d" Foreground="White"/>
+                <Button Content="Lưu" Width="80" Click="BtnSave_Click"
+                        Background="#28a745" Foreground="White"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Border>
+</Window>

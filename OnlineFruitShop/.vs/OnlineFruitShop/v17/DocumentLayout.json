@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6031222D-E6CD-48EE-9B92-044128D105C7}|PresentationWPF\\PresentationWPF.csproj|d:\\ki_5\\prn212_project\\onlinefruitshop\\presentationwpf\\admin\\product\\productmanagementcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6031222D-E6CD-48EE-9B92-044128D105C7}|PresentationWPF\\PresentationWPF.csproj|solutionrelative:presentationwpf\\admin\\product\\productmanagementcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E45A66E9-086A-4C97-A87C-E7D9AE37DB87}|DataAccessLayer\\DataAccessLayer.csproj|d:\\ki_5\\prn212_project\\onlinefruitshop\\dataaccesslayer\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45A66E9-086A-4C97-A87C-E7D9AE37DB87}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E45A66E9-086A-4C97-A87C-E7D9AE37DB87}|DataAccessLayer\\DataAccessLayer.csproj|d:\\ki_5\\prn212_project\\onlinefruitshop\\dataaccesslayer\\passwordresetrequestdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45A66E9-086A-4C97-A87C-E7D9AE37DB87}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\passwordresetrequestdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6031222D-E6CD-48EE-9B92-044128D105C7}|PresentationWPF\\PresentationWPF.csproj|d:\\ki_5\\prn212_project\\onlinefruitshop\\presentationwpf\\admin\\product\\productmanagementcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6031222D-E6CD-48EE-9B92-044128D105C7}|PresentationWPF\\PresentationWPF.csproj|solutionrelative:presentationwpf\\admin\\product\\productmanagementcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductDAO.cs",
+              "DocumentMoniker": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\DataAccessLayer\\ProductDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\ProductDAO.cs",
+              "ToolTip": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\DataAccessLayer\\ProductDAO.cs",
+              "RelativeToolTip": "DataAccessLayer\\ProductDAO.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAIwDoAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T08:38:10.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PasswordResetRequestDAO.cs",
+              "DocumentMoniker": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\DataAccessLayer\\PasswordResetRequestDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\PasswordResetRequestDAO.cs",
+              "ToolTip": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\DataAccessLayer\\PasswordResetRequestDAO.cs",
+              "RelativeToolTip": "DataAccessLayer\\PasswordResetRequestDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T08:38:09.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductManagementControl.xaml.cs",
+              "DocumentMoniker": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\PresentationWPF\\Admin\\Product\\ProductManagementControl.xaml.cs",
+              "RelativeDocumentMoniker": "PresentationWPF\\Admin\\Product\\ProductManagementControl.xaml.cs",
+              "ToolTip": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\PresentationWPF\\Admin\\Product\\ProductManagementControl.xaml.cs",
+              "RelativeToolTip": "PresentationWPF\\Admin\\Product\\ProductManagementControl.xaml.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAA5wCUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T08:38:01.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductManagementControl.xaml",
+              "DocumentMoniker": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\PresentationWPF\\Admin\\Product\\ProductManagementControl.xaml",
+              "RelativeDocumentMoniker": "PresentationWPF\\Admin\\Product\\ProductManagementControl.xaml",
+              "ToolTip": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\PresentationWPF\\Admin\\Product\\ProductManagementControl.xaml",
+              "RelativeToolTip": "PresentationWPF\\Admin\\Product\\ProductManagementControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-23T08:37:49.943Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="PresentationWPF.Member.OrderHistoryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PresentationWPF.Member"
+             Background="White">
+    <UserControl.Resources>
+        <!-- Ẩn nút Hủy nếu Status == "Canceled" -->
+        <Style x:Key="CancelButtonVisibilityStyle" TargetType="Button">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Status}" Value="Canceled">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="🧾 Lịch sử đơn hàng"
+                   FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <DataGrid x:Name="dgOrders"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã đơn" Binding="{Binding OrderId}" Width="80"/>
+                <DataGridTextColumn Header="Ngày đặt" Binding="{Binding OrderDate, StringFormat='dd/MM/yyyy'}" Width="120"/>
+                <DataGridTextColumn Header="Tổng tiền (₫)" Binding="{Binding TotalAmount, StringFormat={}{0:N0}}" Width="150"/>
+                <DataGridTextColumn Header="Trạng thái" Binding="{Binding Status}" Width="120"/>
+                <DataGridTextColumn Header="Người nhận" Binding="{Binding ReceiverName}" Width="*" />
+                <DataGridTextColumn Header="SĐT" Binding="{Binding ReceiverPhone}" Width="120"/>
+                <DataGridTextColumn Header="Địa chỉ" Binding="{Binding ShippingAddress}" Width="200"/>
+
+                <!-- Nút Hủy -->
+                <DataGridTemplateColumn Header="Hủy đơn" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Hủy"
+                                    Style="{StaticResource CancelButtonVisibilityStyle}"
+                                    Click="CancelOrder_Click"
+                                    Background="OrangeRed"
+                                    Foreground="White"
+                                    Padding="4,2"
+                                    ToolTip="Hủy đơn hàng"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

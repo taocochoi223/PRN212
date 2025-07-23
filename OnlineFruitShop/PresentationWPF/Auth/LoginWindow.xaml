@@ -1,0 +1,117 @@
+﻿<Window x:Class="PresentationWPF.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fruit Shop - Login" Height="500" Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Grid>
+        <!-- Background -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/fruit_bg.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <!-- Login Panel -->
+        <Border Width="420" Height="460"
+                CornerRadius="20"
+                Background="#E6FFFFFF"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Padding="30"
+                Effect="{DynamicResource DropShadow}">
+            <StackPanel>
+
+                <!-- Logo and Title -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <Image Source="/Images/logo.jpg" Width="40" Height="40" Margin="0,0,10,0"/>
+                    <TextBlock Text="Fruit Shop" FontSize="26" FontWeight="Bold" Foreground="#4CAF50"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <TextBlock Text="Welcome Back!" FontSize="20" FontWeight="SemiBold" Foreground="#555"
+                           HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- Email -->
+                <TextBlock Text="Email" FontWeight="SemiBold" Foreground="#333" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtEmail"
+                         Height="35" Padding="8"
+                         Background="#FAFAFA"
+                         BorderBrush="#CCC" BorderThickness="1"
+                         FontSize="14" Foreground="#222"
+                         Margin="0,0,0,10"/>
+
+                <!-- Password -->
+                <TextBlock Text="Password" FontWeight="SemiBold" Foreground="#333" Margin="0,10,0,5"/>
+                <PasswordBox x:Name="txtPassword"
+                             Height="35" Padding="8"
+                             Background="#FAFAFA"
+                             BorderBrush="#CCC" BorderThickness="1"
+                             FontSize="14" Foreground="#222"
+                             Margin="0,0,0,10"/>
+
+                <!-- Login Button -->
+                <Button Content="Đăng nhập"
+                        Height="42"
+                        Background="#FF9800"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Margin="0,20,0,10"
+                        Click="BtnLogin_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                CornerRadius="10"
+                                                Padding="10"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="0">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="5" ShadowDepth="0" Color="#888"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#F57C00"/>
+                                    <!-- hover cam đậm -->
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Forgot Password -->
+                <TextBlock Text="Quên mật khẩu?"
+                           HorizontalAlignment="Right"
+                           Foreground="#E64A19"
+                           FontWeight="SemiBold"
+                           Cursor="Hand"
+                           TextDecorations="Underline"
+                           MouseDown="ForgotPassword_MouseDown"
+                           Margin="0,0,0,10"/>
+
+                <!-- Register -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <TextBlock Text="Bạn chưa có tài khoản?" Foreground="#666"/>
+                    <TextBlock Text=" Đăng ký"
+                               Foreground="#388E3C"
+                               FontWeight="Bold"
+                               Cursor="Hand"
+                               TextDecorations="Underline"
+                               MouseDown="Register_MouseDown"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="PresentationWPF.UserManagementControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F9FAFB">
+
+    <Grid Margin="20">
+        <Border Background="White" CornerRadius="12" Padding="20">
+            <DockPanel LastChildFill="True">
+
+                <!-- Tiêu đề -->
+                <TextBlock Text="👥 Quản lý người dùng"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Margin="0,0,0,20"
+                           DockPanel.Dock="Top"
+                           Foreground="#333"/>
+
+                <!-- Nút thêm -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                            DockPanel.Dock="Top" Margin="0,0,0,10">
+                    <Button Content="➕ Thêm người dùng"
+                            Width="160"
+                            Background="#28A745"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="BtnAddUser_Click"
+                            Margin="0,0,10,0"
+                            Padding="8,4"/>
+                </StackPanel>
+
+                <!-- Bảng người dùng -->
+                <DataGrid x:Name="dgUsers"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          AlternatingRowBackground="#F3F4F6"
+                          HeadersVisibility="Column"
+                          GridLinesVisibility="All"
+                          HorizontalGridLinesBrush="#E0E0E0"
+                          VerticalGridLinesBrush="#E0E0E0"
+                          Margin="0"
+                          VerticalScrollBarVisibility="Auto"
+                          ColumnHeaderHeight="40"
+                          VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch"
+                          FontSize="14"
+                          CanUserAddRows="False"
+                          CanUserResizeRows="False">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID"
+                                            Binding="{Binding UserId}"
+                                            Width="50"/>
+
+                        <!-- Tên có tự wrap -->
+                        <DataGridTemplateColumn Header="Tên" Width="200">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding FullName}"
+                                               TextWrapping="Wrap"
+                                               TextTrimming="CharacterEllipsis"
+                                               VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <!-- Email có tự wrap -->
+                        <DataGridTemplateColumn Header="Email" Width="250">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Email}"
+                                               TextWrapping="Wrap"
+                                               TextTrimming="CharacterEllipsis"
+                                               VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn Header="SĐT"
+                                            Binding="{Binding PhoneNumber}"
+                                            Width="120"/>
+
+                        <DataGridTextColumn Header="Vai trò"
+                                            Binding="{Binding Role}"
+                                            Width="100"/>
+
+                        <!-- Cột hành động -->
+                        <DataGridTemplateColumn Header="Hành động" Width="180">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button Content="✏ Sửa"
+                                                Background="#007BFF"
+                                                Foreground="White"
+                                                FontWeight="SemiBold"
+                                                Margin="0,0,4,0"
+                                                Padding="6,2"
+                                                Click="BtnEdit_Click"/>
+                                        <Button Content="🗑 Xóa"
+                                                Background="#DC3545"
+                                                Foreground="White"
+                                                FontWeight="SemiBold"
+                                                Padding="6,2"
+                                                Click="BtnDelete_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </DockPanel>
+        </Border>
+    </Grid>
+</UserControl>
