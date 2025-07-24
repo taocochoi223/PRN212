@@ -3074,23 +3074,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Dell\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\Repository\\Repository.csproj",
+      "projectUniqueName": "D:\\Ki_5\\PRN212\\code\\abc3\\PRN212\\OnlineFruitShop\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\Repository\\obj\\",
+      "projectPath": "D:\\Ki_5\\PRN212\\code\\abc3\\PRN212\\OnlineFruitShop\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "D:\\Ki_5\\PRN212\\code\\abc3\\PRN212\\OnlineFruitShop\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3105,11 +3105,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\BusinessObject\\BusinessObject.csproj"
+            "D:\\Ki_5\\PRN212\\code\\abc3\\PRN212\\OnlineFruitShop\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\Ki_5\\PRN212\\code\\abc3\\PRN212\\OnlineFruitShop\\BusinessObject\\BusinessObject.csproj"
             },
-            "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "D:\\Ki_5\\PRN212_Project\\OnlineFruitShop\\DataAccessLayer\\DataAccessLayer.csproj"
+            "D:\\Ki_5\\PRN212\\code\\abc3\\PRN212\\OnlineFruitShop\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "D:\\Ki_5\\PRN212\\code\\abc3\\PRN212\\OnlineFruitShop\\DataAccessLayer\\DataAccessLayer.csproj"
             }
           }
         }
@@ -3145,7 +3145,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -28,22 +28,21 @@ namespace PresentationWPF.Member
         public AccountControl()
         {
             InitializeComponent();
-            Loaded += AccountControl_Loaded;
         }
 
-        private void AccountControl_Loaded(object sender, RoutedEventArgs e)
+        public AccountControl(User currentUser) : this()
         {
-            // Lấy user từ UserDashboardWindow
-            if (Application.Current.Windows[0] is UserDashboardWindow dashboard)
-            {
-                _currentUser = dashboard.GetCurrentUser();
+            _currentUser = currentUser;
+            LoadUserInfo();
+        }
 
-                if (_currentUser != null)
-                {
-                    txtFullName.Text = _currentUser.FullName;
-                    txtEmail.Text = _currentUser.Email;
-                    txtPhone.Text = _currentUser.PhoneNumber;
-                }
+        private void LoadUserInfo()
+        {
+            if (_currentUser != null)
+            {
+                txtFullName.Text = _currentUser.FullName;
+                txtEmail.Text = _currentUser.Email;
+                txtPhone.Text = _currentUser.PhoneNumber;
             }
         }
 

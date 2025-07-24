@@ -2,38 +2,126 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PresentationWPF.Member"
-             Background="White">
-    <Grid>
-        <Border Width="500" Padding="30" Background="WhiteSmoke" CornerRadius="10" 
-                BorderBrush="#DDD" BorderThickness="1"
-                HorizontalAlignment="Center" VerticalAlignment="Center" >
+             Background="#F8F9FA">
 
-            <StackPanel>
-                <TextBlock Text="Thông tin tài khoản"
-                           FontSize="24" FontWeight="Bold"
-                           HorizontalAlignment="Center" Margin="0,0,0,20"/>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="40">
+            <!-- Page Header -->
+            <TextBlock Text="👤 Thông tin tài khoản" Style="{StaticResource PageHeaderStyle}"/>
 
-                <!-- Họ tên (readonly) -->
-                <TextBlock Text="Họ tên" FontWeight="SemiBold"/>
-                <TextBox x:Name="txtFullName" IsReadOnly="True" Margin="0,5,0,15" 
-                         Background="#f0f0f0" BorderBrush="#ccc"/>
+            <!-- Account Info Card -->
+            <Border Style="{StaticResource CardStyle}"
+                    MaxWidth="600"
+                    HorizontalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Text="Cập nhật thông tin cá nhân" Style="{StaticResource SectionHeaderStyle}"/>
 
-                <!-- Email -->
-                <TextBlock Text="Email" FontWeight="SemiBold"/>
-                <TextBox x:Name="txtEmail" Margin="0,5,0,15" BorderBrush="#ccc"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                <!-- Số điện thoại -->
-                <TextBlock Text="Số điện thoại" FontWeight="SemiBold"/>
-                <TextBox x:Name="txtPhone" Margin="0,5,0,20" BorderBrush="#ccc"/>
+                        <!-- Full Name -->
+                        <TextBlock Grid.Row="0" Grid.Column="0"
+                                   Text="Họ và tên:"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,10,15"/>
+                        <TextBox Grid.Row="0" Grid.Column="1"
+                                 x:Name="txtFullName"
+                                 IsReadOnly="True"
+                                 Style="{StaticResource ModernTextBoxStyle}"
+                                 Background="#F5F5F5"
+                                 Margin="0,0,0,15"/>
 
-                <!-- Nút cập nhật -->
-                <Button Content="✔ Cập nhật"
-        Click="UpdateButton_Click"
-        Height="40" Background="#2ecc71" Foreground="White"
-        FontWeight="Bold" FontSize="14" 
-        BorderThickness="0" />
+                        <!-- Email -->
+                        <TextBlock Grid.Row="1" Grid.Column="0"
+                                   Text="Email:"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,10,15"/>
+                        <TextBox Grid.Row="1" Grid.Column="1"
+                                 x:Name="txtEmail"
+                                 Style="{StaticResource ModernTextBoxStyle}"
+                                 Margin="0,0,0,15"/>
 
-            </StackPanel>
-        </Border>
-    </Grid>
+                        <!-- Phone -->
+                        <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="Số điện thoại:"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,10,20"/>
+                        <TextBox Grid.Row="2" Grid.Column="1"
+                                 x:Name="txtPhone"
+                                 Style="{StaticResource ModernTextBoxStyle}"
+                                 Margin="0,0,0,20"/>
+
+                        <!-- Update Button -->
+                        <Button Grid.Row="3" Grid.Column="1"
+                                Content="💾 Cập nhật thông tin"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                Click="UpdateButton_Click"
+                                HorizontalAlignment="Right"
+                                Padding="20,12"
+                                FontSize="14"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!-- Additional Info Card -->
+            <Border Style="{StaticResource CardStyle}"
+                    MaxWidth="600"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                <StackPanel>
+                    <TextBlock Text="Thông tin bổ sung" Style="{StaticResource SectionHeaderStyle}"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Security Section -->
+                        <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                            <TextBlock Text="🔒 Bảo mật"
+                                       FontWeight="SemiBold"
+                                       FontSize="16"
+                                       Margin="0,0,0,10"/>
+                            <Button Content="🔑 Đổi mật khẩu"
+                                    Style="{StaticResource SecondaryButtonStyle}"
+                                    HorizontalAlignment="Left"
+                                    Margin="0,0,0,10"/>
+                            <Button Content="🛡️ Xác thực 2 bước"
+                                    Style="{StaticResource SecondaryButtonStyle}"
+                                    HorizontalAlignment="Left"/>
+                        </StackPanel>
+
+                        <!-- Preferences Section -->
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="⚙️ Tùy chọn"
+                                       FontWeight="SemiBold"
+                                       FontSize="16"
+                                       Margin="0,0,0,10"/>
+                            <CheckBox Content="Nhận thông báo email"
+                                      IsChecked="True"
+                                      Margin="0,0,0,5"/>
+                            <CheckBox Content="Nhận tin khuyến mãi"
+                                      IsChecked="True"
+                                      Margin="0,0,0,5"/>
+                            <CheckBox Content="Thông báo đơn hàng"
+                                      IsChecked="True"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

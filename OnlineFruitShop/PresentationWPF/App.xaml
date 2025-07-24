@@ -4,7 +4,10 @@
              xmlns:local="clr-namespace:PresentationWPF"
              StartupUri="Auth/LoginWindow.xaml">
     <Application.Resources>
-        <DropShadowEffect x:Key="DropShadow" BlurRadius="10" ShadowDepth="4" Color="Black" Opacity="0.3"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/CommonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
-
 </Application>

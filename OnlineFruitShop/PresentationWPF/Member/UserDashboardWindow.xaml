@@ -5,50 +5,163 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresentationWPF.Member"
         mc:Ignorable="d"
-        Title="FruitShop - Trang người dùng" Height="600" Width="1000"
-        WindowStartupLocation="CenterScreen" Background="#F9FBF9">
+        Title="🍏 Fruit Shop - Trang người dùng" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen" Background="{StaticResource BackgroundColor}" WindowState="Maximized">
 
     <Window.Resources>
-        <Style x:Key="MenuButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="Padding" Value="10"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="4">
-                            <ContentPresenter VerticalAlignment="Center" Margin="10,0"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/CommonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Modern Menu Button Style -->
+            <Style x:Key="ModernMenuButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Padding" Value="20,12"/>
+                <Setter Property="Margin" Value="5,2"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    CornerRadius="8"
+                                    Padding="{TemplateBinding Padding}">
+                                <ContentPresenter VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Active Menu Button Style -->
+            <Style x:Key="ActiveMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource ModernMenuButtonStyle}">
+                <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+            </Style>
+        </ResourceDictionary>
     </Window.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <!-- SIDEBAR -->
-        <StackPanel Background="#2C3E50">
-            <TextBlock Text="🍏 Fruit User" FontSize="20" Foreground="White" FontWeight="Bold" Margin="10" />
+        <!-- MODERN HEADER NAVIGATION -->
+        <Border Grid.Row="0" Background="{StaticResource SecondaryColor}" Padding="30,15">
+            <Border.Effect>
+                <DropShadowEffect Color="#000000" Direction="270" ShadowDepth="2" Opacity="0.1" BlurRadius="10"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            <Button Content="🏠 Trang chủ" Click="Home_Click" Style="{StaticResource MenuButtonStyle}" />
-            <Button Content="🍎 Sản phẩm" Click="Products_Click" Style="{StaticResource MenuButtonStyle}" />
-            <Button Content="🛒 Giỏ hàng" Click="Cart_Click" Style="{StaticResource MenuButtonStyle}" />
-            <Button Content="📦 Đơn hàng" Click="Orders_Click" Style="{StaticResource MenuButtonStyle}" />
-            <Button Content="👤 Tài khoản" Click="Account_Click" Style="{StaticResource MenuButtonStyle}" />
-            <Button Content="🚪 Đăng xuất" Click="Logout_Click" Style="{StaticResource MenuButtonStyle}"/>
-        </StackPanel>
+                <!-- Modern Logo -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Background="{StaticResource PrimaryColor}"
+                            CornerRadius="12"
+                            Padding="8"
+                            Margin="-20,0,5,0">
+                        <TextBlock Text="🍏" FontSize="24" VerticalAlignment="Center"/>
+                    </Border>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Fruit Shop"
+                                   FontSize="22"
+                                   Foreground="White"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Fresh &amp; Organic"
+                                   FontSize="11"
+                                   Foreground="White"
+                                   Opacity="0.8"/>
+                    </StackPanel>
+                </StackPanel>
 
-        <!-- MAIN CONTENT -->
-        <ContentControl x:Name="MainContent" Grid.Column="1" Margin="10"/>
+                <!-- Modern Navigation Menu -->
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="10,0">
+                    <Button Content="🏠 Trang chủ" Click="Home_Click" Style="{StaticResource ModernMenuButtonStyle}" />
+                    <Button Content="🍎 Sản phẩm" Click="Products_Click" Style="{StaticResource ModernMenuButtonStyle}" />
+                    <Button Content="🛒 Giỏ hàng" Click="Cart_Click" Style="{StaticResource ModernMenuButtonStyle}" />
+                    <Button Content="📦 Đơn hàng" Click="Orders_Click" Style="{StaticResource ModernMenuButtonStyle}" />
+                    <Button Content="👤 Tài khoản" Click="Account_Click" Style="{StaticResource ModernMenuButtonStyle}" />
+                </StackPanel>
+
+                <!-- Modern User Actions -->
+                <StackPanel Grid.Column="2"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <!-- User Info -->
+                    <Border Background="White"
+                            CornerRadius="20"
+                            Padding="15,8"
+                            Margin="0,0,15,0"
+                            Opacity="0.95">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Background="{StaticResource PrimaryColor}"
+                                    CornerRadius="15"
+                                    Width="30"
+                                    Height="30"
+                                    Margin="0,0,10,0">
+                                <TextBlock Text="👤"
+                                           Foreground="White"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="14"/>
+                            </Border>
+                            <TextBlock x:Name="txtUserName"
+                                       Text="Xin chào!"
+                                       Foreground="{StaticResource TextPrimaryColor}"
+                                       FontWeight="SemiBold"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Logout Button -->
+                    <Button Content="🚪 Đăng xuất"
+                            Click="Logout_Click"
+                            Background="{StaticResource DangerColor}"
+                            Foreground="White"
+                            BorderThickness="0"
+                            FontWeight="SemiBold"
+                            Padding="15,8"
+                            Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                        CornerRadius="8"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{StaticResource PrimaryDarkColor}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- MODERN MAIN CONTENT -->
+        <Border Grid.Row="1" Background="{StaticResource BackgroundColor}" Padding="20">
+            <ContentControl x:Name="MainContent"/>
+        </Border>
     </Grid>
 </Window>

@@ -19,15 +19,16 @@ namespace PresentationWPF.Member
     /// <summary>
     /// Interaction logic for UserDashboardWindow.xaml
     /// </summary>
-     public partial class UserDashboardWindow : Window
-     {
+    public partial class UserDashboardWindow : Window
+    {
         private User _currentUser;
 
         public UserDashboardWindow(User user)
         {
             InitializeComponent();
             _currentUser = user;
-            MainContent.Content = new HomeControl();
+            txtUserName.Text = $"Xin chào, {_currentUser.FullName}!";
+            MainContent.Content = new HomeControl(_currentUser);
         }
         public User GetCurrentUser()
         {
@@ -35,7 +36,7 @@ namespace PresentationWPF.Member
         }
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = new HomeControl();
+            MainContent.Content = new HomeControl(_currentUser);
         }
 
         private void Products_Click(object sender, RoutedEventArgs e)
@@ -56,7 +57,7 @@ namespace PresentationWPF.Member
 
         private void Account_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = new AccountControl();
+            MainContent.Content = new AccountControl(_currentUser);
         }
 
 

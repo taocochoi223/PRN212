@@ -17,20 +17,30 @@ namespace Repository
         public List<Product> GetAllProducts()
         {
             var products = ProductDAO.GetAllProducts();
-            string baseUrl = "https://raw.githubusercontent.com/taocochoi223/PRN212/main/images/";
-
             foreach (var p in products)
             {
-                // Mapping tên sai -> đúng nếu cần
-                if (p.ImageUrl == "tao_my.jpg") p.ImageUrl = "taomy.jpg";
-                if (p.ImageUrl == "cam_sanh.jpg") p.ImageUrl = "camsanh.jpg";
-                // ...
+                if (!string.IsNullOrEmpty(p.ImageUrl))
+                {
+                    // Gắn đường dẫn đầy đủ tới ảnh
+                    string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                    string imagePath = System.IO.Path.Combine(baseDir, "Images", p.ImageUrl);
 
-                p.ImageUrl = baseUrl + p.ImageUrl;
+                    // Nếu file tồn tại thì dùng đường dẫn đầy đủ
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        p.ImageUrl = imagePath;
+                    }
+                    else
+                    {
+                        p.ImageUrl = null; // hoặc ảnh mặc định nếu cần
+                    }
+                }
             }
-
             return products;
         }
+
+
+
 
 
 

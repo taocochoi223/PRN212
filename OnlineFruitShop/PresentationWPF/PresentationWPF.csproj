@@ -9,8 +9,52 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\camsanh.jpg" />
+    <None Remove="Images\cam_sanh.jpg" />
+    <None Remove="Images\chuoi_tieu.jpg" />
+    <None Remove="Images\dua_hau.jpg" />
     <None Remove="Images\fruit_bg.jpg" />
+    <None Remove="Images\le_hanquoc.jpg" />
     <None Remove="Images\logo.jpg" />
+    <None Remove="Images\mangcut.jpg" />
+    <None Remove="Images\nho_my.jpg" />
+    <None Remove="Images\oi_nuhoang.jpg" />
+    <None Remove="Images\taomy.jpg" />
+    <None Remove="Images\tao_my.jpg" />
+    <None Remove="Images\thanhlong.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\cam_sanh.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\chuoi_tieu.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\dua_hau.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\le_hanquoc.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mangcut.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\nho_my.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\oi_nuhoang.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tao_my.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\thanhlong.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\xoai_cat.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -22,26 +66,15 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Images\camsanh.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\mangcut.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\taomy.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\thanhlong.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\xoaicat.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\fruit_bg.jpg" />
-    <Resource Include="Images\logo.jpg" />
+    <Content Include="Images\fruit_bg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

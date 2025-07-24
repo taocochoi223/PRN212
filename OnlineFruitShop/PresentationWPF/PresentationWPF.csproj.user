@@ -53,6 +53,9 @@
     <Compile Update="Member\HomeControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Member\OrderDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Member\OrderHistoryControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -60,6 +63,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Member\ProductListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Member\SimpleOrderWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Member\UserDashboardWindow.xaml.cs">
